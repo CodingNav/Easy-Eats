@@ -1,0 +1,464 @@
+
+/* Ying's CSS */
+
+/* for general use*/
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.bg-project-green {
+    background: #c3e3d7;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.heading-font {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 32px;
+}
+
+.ml-6 {
+    margin-left: 60px;
+}
+
+/* for nav bar */
+
+.nav-wraper {
+    box-shadow: none;
+    border-bottom: solid;
+    height: 100px;
+    border-bottom: solid;
+    border-color: #fff;
+    padding: 15px 0 100px 0;
+}
+
+/* nav bar logo */
+
+nav .brand-logo {
+    font-family: 'Monofett', cursive;
+    font-weight: 100px;
+    font-size: 3rem;
+    background: #91b2d2;
+    /*rgb(179, 171, 183) */
+    color: #c3e3d7;
+    padding: 5px 20px 10px;
+    border-radius: 50px;
+}
+
+/* nav search bar */
+
+.nav-list {
+    margin-top: 20px;
+    margin-right: 60px;
+}
+
+button:focus {
+    outline: none;
+    background-color: #c3e3d7;
+    text-shadow: 0 0 15px #1f5a95;
+}
+
+nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.fa, .fas {
+    font-size: 2.5rem;
+}
+nav .nav-list .input-field {
+    display: flex;
+}
+nav .nav-list .input-field i{
+    font-size: 2.5rem;
+}
+
+/* index.html */
+
+.search-bar-container {
+    width: 100%;
+    height: 700px;
+    background: #91b2d260;
+    background-image: url('../images/search-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.search-bar-container p {
+    margin-top: 175px;
+    font-size: 2rem;
+}
+
+.search-bar-container .heading-font {
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 4px black;
+}
+
+.search-bar {
+    background-color: #91b2d2e3;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 0px 20%;
+}
+
+.search-bar:hover {
+    box-shadow: 0 0 20px 10px #c3e3d7;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 20px 10px #c3e3d7;
+}
+
+.card .card-image img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* search.html */
+
+/* TODO: ADD -- CARDS STYLING 
+    SEARCH - HOW TO MAKE TEXT WRAP IN A CARD*/
+
+body {
+    background: #c3e3d7a9;
+}
+
+.row {
+    /* border: solid; */
+    padding: 0 30px;
+}
+
+.result-container .card {
+    height: 350px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 25px;
+}
+
+.result-container .card:hover {
+    box-shadow: 0 0 5px 6px #afc5d7;
+    /*  x y blur spread color*/
+}
+
+.result-container .card a {
+    color: black;
+}
+
+.result-container .card-image:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 4px #afc5d7;
+    /*  x y blur spread color*/
+}
+
+.result-container .card .card-content {
+    padding: 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.result-container .card .card-content .card-title {
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.result-container .card .card-content p {
+    /* border: solid; */
+    margin-bottom: 5px;
+}
+
+
+
+/* Shola's CSS */
+/*recipe.html*/
+
+.recipe-name{
+    background:#afc5d7;
+    font-family: cursive;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 3.5rem;
+}
+
+.recipe-instructions {
+    font-family: cursive;
+    background: #afc5d7;
+    border-radius: 50px;
+    padding: 0em;
+    
+}
+
+.ingredients-list{
+    font-family: cursive;
+    background: #afc5d7;
+    border-radius: 50px;
+    padding: 0em;
+    
+}
+
+/*cart.html*/
+
+h2.header{
+        font-size: 3.56rem;
+        line-height: 110%;
+        font-family:'Monofett', cursive; 
+        background:#afc5d7;
+        border-radius: 50px;
+        padding:15px;
+    }
+
+h2.cart-items {
+        font-size: 3.56rem;
+        line-height: 110%;
+        font-family:'Monofett', cursive; 
+        background:#afc5d7;
+        border-radius: 50px;
+        padding:15px;
+    }
+    
+
+.collapsible-header{
+    background-color: lightblue;
+    font-size:24px;
+    font-family: cursive;
+}
+
+.collapsible-body{
+    background-color: lightblue;
+
+}
+
+.collection .collection-item {
+    background-color: lightblue;
+    font-family: cursive;
+    font-size: 20px;
+}
+
+
+/* MODAL CSS (Navleen) */
+
+#recipe-instructions {
+    white-space: pre-line;
+}
+  
+#ingredient-name {
+    text-transform: capitalize;
+}
+
+/* Modal Card CSS */
+
+.modal-card {
+    height: 460px;
+}
+
+.modal-card .card-content {
+    height: 155px;
+}
+
+.checked {
+    border: 3px solid lightgreen;
+}
+
+/* Modal Substitute Item Search Bar */
+.input-field {
+    margin: 0;
+}
+
+#substitute-search {
+    margin: 0px 30px;
+}
+
+#substitute-search input {
+    margin: 0;
+    width: calc(100% - 30px);
+    height: unset;
+    padding-left: 30px;
+}
+
+#substitute-search i {
+    line-height: unset;
+}
+
+#substitute-search .label-icon {
+    left: 0;
+}
+
+/* Cart page collapisible CSS */
+.collapsible-body {
+    background-color: white;
+}
+
+
+
+/* Media screen for index.html*/
+
+@media only screen and (max-width: 992px) {
+    /* nav bar */
+    nav .brand-logo.left, nav .brand-logo.right {
+        padding: 5px 20px 10px;
+    }
+    /* main search */
+    .search-bar-container p {
+        margin-top: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* nav bar */
+    nav .brand-logo.left, nav .brand-logo.right, .ml-6 {
+        background: none;
+        color: #91b2d2;
+        font-size: 30px;
+        margin-left: 10px;
+    }
+    .nav-list {
+        margin: 35px 0 0 0;
+    }
+    /* main search */
+    .search-bar-container {
+        height: 610px;
+    }
+    .search-bar {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .heading-font {
+        font-size: 1.4rem;
+    }
+    /* nav bar */
+    nav .brand-logo.left, nav .brand-logo.right, .ml-6 {
+        background: none;
+        font-size: 28px;
+    }
+    .nav-list {
+        margin: 40px 0 0 0;
+    }
+    /* main search bar */
+    .search-bar-container {
+        height: 500px;
+    }
+    .search-bar-container p {
+        margin-top: 150px;
+        font-size: 1.4rem;
+    }
+    .search-bar {
+        border-radius: 30px;
+        padding: 8px;
+    }
+}
+
+/* Media screen for SEARCH.html*/
+
+@media only screen and (max-width: 992px) {
+    .row .col.m3 {
+        width: 33%;
+    }
+    .result-container .card .card-content .card-title {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .row .col.m3 {
+        width: 48%;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .row .col.m3 {
+        width: 90%;
+        margin-left: auto;
+    }
+    .result-container .card {
+        height: auto;
+        background: #fff;
+        border-radius: 20px;
+    }
+    .result-container .card .card-image img {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .row .col.m3 {
+        width: 100%;
+        margin-left: auto;
+    }
+    .result-container .card .card-content .card-title {
+        line-height: 15px;
+        font-size: 16px;
+    }
+    .result-container .card .card-content p {
+        font-size: 12px;
+    }
+    .result-container .card {
+        height: auto;
+        padding: 0;
+        background: #fff;
+        border-radius: 0;
+    }
+    .result-container .card .card-image img {
+        height: 120px;
+    }
+}
+
+/* Media screen for RECIPE.html*/
+
+@media only screen and (max-width: 992px) {
+    .row.col.s12 center-align{
+        width: 33%;
+        margin-left: auto;
+    }
+    .recipe-name{
+        line-height:5px;
+        font-size: 1.5rem;
+        padding:5px, 10px;
+    }
+
+    .recipe-instructions{
+        line-height:4px;
+        font-size: 20px;
+        padding: 0.1rem;
+    }
+    .ingredients-list{
+        line-height: 10px;
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .row .col.row.col.s12 {
+        width: 90%;
+        margin-left: auto;
+    }
+    .recipe-name {
+        height: auto;
+        background: #fff;
+        border-radius: 0px;
+    }
+    .recipe-instructions{
+        line-height:4px;
+        font-size: 25px;
+        background: #fff;
+    }
+    .ingredients-list{
+        line-height: 10px;
+        font-size: 25px;
+        background: #fff;
+    }
+}

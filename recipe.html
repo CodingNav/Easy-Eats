@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Stop</title>
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+  <!-- materializecss -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+
+</head>
+
+<body>
+  <nav class="nav-wraper bg-project-green">
+    <a href="index.html" class="brand-logo left ml-6">One Stop</a>
+
+    <ul class="right nav-list center">
+      <li>
+        <form>
+          <div class="input-field">
+            <button class="searchBtn btn transparent" type="submit"><i class="material-icons">search</i></button>
+            <input class="homeSearch" id="search-input" value=" " calss="white grey-tex"
+              placeholder="Enter your favorite recipe here..." type="search" required>
+          </div>
+        </form>
+      </li>
+      <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
+    </ul>
+  </nav>
+
+  <div class="container" style="background-color:white;">
+    <!--RECIPE RESULTS-->
+    <div class="row">
+      <div class="col s12 center-align">
+        <h1 class="recipe-name" id="recipe-name">Butter Milk Pancakes</h1>
+        <img id="recipe-img" src="" width="400px" style="max-width:100%">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <h3 class="ingredients-list">Ingredients</h3>
+        <!--ingredients list-->
+        <ul id="ingredient-list">
+          <!-- <li>Measurement <span>ingredient</span></li> -->
+        </ul>
+
+        <!--add to cart btn-->
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" id="modal-btn" href="#ingredient-modal">Add to Cart</a>
+      </div>
+
+      <!--recipe instructions-->
+      <div class="col s12 m6">
+        <div class="recipe-instructions">
+          <h3 class="recipe-instructions"> Instructions</h3>
+          <p id="recipe-instructions"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m12 center-align">
+        <!-- Youtube Tutorial -->
+        <iframe id="tutorial" width="840" height="473" src="" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen style="max-width:100%"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- MODAL HTML (NAVLEEN) -->
+
+  <!-- Modal Structure -->
+  <div id="ingredient-modal" class="modal bottom-sheet">
+
+    <!-- Ingredients Modal -->
+    <div class="modal-content" id="ingredient-content">
+      <h4>Pick Your Choice of Ingredient
+        <!-- Next Button -->
+        <a class="waves-effect waves-light btn right" id="next-btn">Next</a>
+        <!-- Search Bar for substitute ingredients -->
+        <form class="right" id="substitute-search" style="display:inline-block; width:25%">
+          <div class="input-field">
+            <input id="substitute-input" type="search" placeholder="Enter substitute item" autocomplete="off" required>
+            <label class="label-icon" for="substitute-input"><i class="material-icons">search</i></label>
+          </div>
+        </form>
+      </h4>
+      <h5 class="center-align" id="ingredient-name">Ingredient Name</h5>
+
+      <!-- Modal Cards -->
+      <div class="row" id="ingredient-card"></div>
+    </div>
+
+    <!-- Finalize Modal -->
+    <div class="modal-content" id="done-content">
+      <h4>Finalize your items <a class="waves-effect waves-light btn modal-close right" id="done-btn">Done</a>
+      </h4>
+      <p><i>Click done to add final items to cart.</i></p>
+
+      <!-- Chosen Ingredients Cards -->
+      <div class="row" id="chosen-ingredients"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
