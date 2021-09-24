@@ -134,9 +134,9 @@ if (window.location.pathname.indexOf("/search.html") > -1) {
 
 if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/One-Stop/") {
     //home page search
-    document.querySelector(".searchBtn").addEventListener("click", function (e) {
+    document.querySelector("#search-btn").addEventListener("click", function (e) {
         e.preventDefault();
-        var homeSearch = document.querySelector(".homeSearch").value;
+        var homeSearch = document.querySelector("#search-input").value;
         localStorage.setItem("homeSearch", homeSearch);
         if (homeSearch !== " ") {
             window.location.href = "search.html";
@@ -319,6 +319,7 @@ function searchRecipe(recipe) {
         if (data.meals === null) {
             searchRecipe(" ");
             alert("There Are No Recipes Available For This Query Please Try A Different Query");
+            return;
         };
         dataLength = data.meals.length;
         localStorage.setItem("lengthOfSearch", dataLength);
@@ -531,6 +532,9 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 }
 
 var navSearch = document.querySelector("#search-input");
+var searchForm = document.querySelector("#search-form");
+console.log(searchForm);
+
 if (navSearch) {
     navSearch.addEventListener("click", function (e) {
         e.preventDefault();
@@ -541,7 +545,7 @@ if (navSearch) {
         };
     });
 
-    navSearch.parentElement.parentElement.addEventListener('submit', function(e){
+    searchForm.addEventListener('submit', function (e){
         e.preventDefault();
         var homeSearch = navSearch.value;
         localStorage.setItem("homeSearch", homeSearch);
