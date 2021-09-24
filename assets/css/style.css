@@ -1,4 +1,19 @@
 /* home page */
+nav {
+    background-color: white;
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 20%);
+}
+nav .brand-logo {
+    margin-left: 20px;
+    color: #f6412f;
+}
+
+nav ul a {
+    font-size: 28px;
+    color: #f6412f;
+}
+
 #home-search {
     height: 64px;
     line-height: 64px;
