@@ -532,8 +532,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 
 var navSearch = document.querySelector("#search-input");
 if (navSearch) {
-    var navIcon = navSearch.parentElement.querySelector("button")
-    navIcon.addEventListener("click", function (e) {
+    navSearch.addEventListener("click", function (e) {
         e.preventDefault();
         var homeSearch = navSearch.value;
         localStorage.setItem("homeSearch", homeSearch);
