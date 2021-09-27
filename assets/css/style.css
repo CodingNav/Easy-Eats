@@ -1,11 +1,13 @@
 /* HOME PAGE */
 
 /* navbar */
+
 nav {
     background-color: white;
     -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 20%);
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 20%);
 }
+
 nav .brand-logo {
     margin-left: 20px;
     color: #f6412f;
@@ -17,6 +19,7 @@ nav ul a {
 }
 
 /* banner images */
+
 .home-banner {
     position: absolute;
     height: 100%;
@@ -28,6 +31,7 @@ nav ul a {
 }
 
 /* search section */
+
 #search-section {
     position: relative;
     height: 50vh;
@@ -52,4 +56,29 @@ nav ul a {
 
 #home-search i {
     line-height: 64px;
+}
+
+/* popular section */
+
+#popular-section {
+    padding: 30px 150px;
+}
+
+#popular-section h1 {
+    margin-bottom: 50px;
+}
+
+#popular-section .card {
+    height: 450px;
+}
+
+#popular-section .card-title {
+    height: 100px;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 1200px) {
+    .row .col.l2-5 {
+        width: 20%;
+    }
 }

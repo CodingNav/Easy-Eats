@@ -118,7 +118,7 @@ if (window.location.pathname.indexOf("/search.html") > -1) {
             var previousSearchLength = localStorage.getItem("lengthOfSearch");
 
             document.querySelector("#card-row").innerHTML = "";
-           
+
             var recipe = document.querySelector(".resultsSearch").value;
             var homeSearch = localStorage.getItem("homeSearch");
 
@@ -142,6 +142,41 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
             window.location.href = "search.html";
         };
     });
+
+    for (i = 0; i < 10; i++) {
+        var randomRecipeURL = "https://www.themealdb.com/api/json/v1/1/random.php?cache=" + i;
+
+        fetch(randomRecipeURL)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var popRecipeDiv = document.querySelector("#popular-recipes");
+                var recipeId = data.meals[0].idMeal;
+                var recipeName = data.meals[0].strMeal;
+                var recipeImg = data.meals[0].strMealThumb;
+                var recipeCategory = data.meals[0].strCategory;
+
+                popRecipeDiv.innerHTML += `
+                <div class="col s12 m4 l2-5">
+                    <div class="card">
+                        <a href="./recipe.html?id=${recipeId}">
+                            <div class="card-image">
+                                <img src="${recipeImg}">
+                                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">${recipeName}</span>
+                                <p>${recipeCategory}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                `
+            })
+    }
 }
 
 // Recipe API Request by Id
@@ -545,7 +580,7 @@ if (navSearch) {
         };
     });
 
-    searchForm.addEventListener('submit', function (e){
+    searchForm.addEventListener('submit', function (e) {
         e.preventDefault();
         var homeSearch = navSearch.value;
         localStorage.setItem("homeSearch", homeSearch);
