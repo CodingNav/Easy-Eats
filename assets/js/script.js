@@ -142,8 +142,9 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
             window.location.href = "search.html";
         };
     });
-
-    for (i = 0; i < 10; i++) {
+    // loads random recipe for popular recipes section
+    var usedRecipes = [];
+    function loadRandomRecipe(i) {
         var randomRecipeURL = "https://www.themealdb.com/api/json/v1/1/random.php?cache=" + i;
 
         fetch(randomRecipeURL)
@@ -151,11 +152,17 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
                 return response.json();
             })
             .then(function (data) {
+
                 var popRecipeDiv = document.querySelector("#popular-recipes");
                 var recipeId = data.meals[0].idMeal;
                 var recipeName = data.meals[0].strMeal;
                 var recipeImg = data.meals[0].strMealThumb;
                 var recipeCategory = data.meals[0].strCategory;
+
+                if (usedRecipes.includes(recipeId)) {
+                    return loadRandomRecipe(i + 100);
+                }
+                usedRecipes.push(recipeId);
 
                 popRecipeDiv.innerHTML += `
                 <div class="col s12 m4 l2-5">
@@ -175,7 +182,11 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
                     </div>
                 </div>
                 `
-            })
+            });
+    }
+
+    for (i = 0; i < 10; i++) {
+        loadRandomRecipe(i);
     }
 }
 
