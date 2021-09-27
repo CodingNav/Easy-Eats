@@ -16,8 +16,20 @@ nav ul a {
     color: #f6412f;
 }
 
+/* banner images */
+.home-banner {
+    position: absolute;
+    height: 100%;
+    z-index: -5;
+}
+
+#banner-right {
+    right: 0;
+}
+
 /* search section */
 #search-section {
+    position: relative;
     height: 50vh;
     background-color: #f5a9001c;
 }
@@ -25,7 +37,7 @@ nav ul a {
 #home-search {
     height: 64px;
     line-height: 64px;
-    background-color: #ff7866;
+    background-color: #ffffff8f;
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
@@ -36,9 +48,6 @@ nav ul a {
 #home-search .input-field input:focus {
     padding-left: 4rem;
     width: calc(100% - 4rem);
-}
-#home-search .input-field>label {
-    color: #ffffff;
 }
 
 #home-search i {
