@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #f6412f;
+}
+
 /* HOME PAGE */
 
 /* navbar */
@@ -10,12 +14,12 @@ nav {
 
 nav .brand-logo {
     margin-left: 20px;
-    color: #f6412f;
+    color: var(--primary-color);
 }
 
 nav ul a {
     font-size: 28px;
-    color: #f6412f;
+    color: var(--primary-color);
 }
 
 /* banner images */
@@ -75,6 +79,12 @@ nav ul a {
 #popular-section .card-title {
     height: 100px;
     overflow: hidden;
+}
+
+/* footer */
+footer {
+    height: 200px;
+    background-color: var(--primary-color);
 }
 
 @media only screen and (min-width: 1200px) {
