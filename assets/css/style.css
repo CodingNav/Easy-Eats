@@ -83,8 +83,42 @@ nav ul a {
 
 /* footer */
 footer {
-    height: 200px;
+    max-height: 500px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: white;
     background-color: var(--primary-color);
+}
+
+footer a {
+    display: inline-block;
+    margin: 10px 0px;
+    font-size: 15px;
+    color: white;
+}
+
+footer .row:first-child {
+    padding-top: 20px;
+}
+
+footer .row:last-child {
+    margin-bottom: 0;
+}
+
+footer #footer-logo {
+    font-size: 28px;
+}
+
+.fab {
+    padding: 10px 10px 10px 0px;
+    font-size: 30px;
+}
+
+hr {
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-color: #ffffff66;
 }
 
 @media only screen and (min-width: 1200px) {
