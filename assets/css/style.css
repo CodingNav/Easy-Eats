@@ -130,3 +130,23 @@ hr {
         width: 20%;
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    #popular-section {
+        padding: 30px 50px;
+    }
+
+    #popular-section .card {
+        height: unset;
+    }
+    
+    #popular-recipes .col:last-child {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #popular-recipes .col:nth-child(n+4) {
+        display: none;
+    }
+}
