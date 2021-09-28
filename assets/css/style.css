@@ -105,6 +105,10 @@ footer .row:last-child {
     margin-bottom: 0;
 }
 
+footer .row:last-child a {
+    color: #ffb3af;
+}
+
 footer #footer-logo {
     font-size: 28px;
 }
