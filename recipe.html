@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Stop</title>
+  <title>Easy Eats</title>
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <!-- google fonts -->
@@ -23,49 +23,42 @@
 </head>
 
 <body>
-  <nav class="nav-wraper bg-project-green">
-    <a href="index.html" class="brand-logo left ml-6">One Stop</a>
-
-    <ul class="right nav-list center">
+  <!-- navbar -->
+  <nav>
+    <a href="index.html"><img src="./assets/images/logo.png"></a>
+    <ul class="right">
       <li>
-        <form>
-          <div class="input-field">
-            <button class="searchBtn btn transparent" type="submit"><i class="material-icons">search</i></button>
-            <input class="homeSearch" id="search-input" value=" " calss="white grey-tex"
-              placeholder="Enter your favorite recipe here..." type="search" required>
-          </div>
+        <form action="">
+          <input class="search-input" type="search" required>
+          <i class="fa fa-search search-btn"></i>
         </form>
       </li>
       <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
     </ul>
-  </nav>
+</nav>
 
-  <div class="container" style="background-color:white;">
+  <div class="container">
     <!--RECIPE RESULTS-->
     <div class="row">
       <div class="col s12 center-align">
-        <h1 class="recipe-name" id="recipe-name">Butter Milk Pancakes</h1>
+        <h1 id="recipe-name"></h1>
         <img id="recipe-img" src="" width="400px" style="max-width:100%">
       </div>
     </div>
 
     <div class="row">
       <div class="col s12 m6">
-        <h3 class="ingredients-list">Ingredients</h3>
+        <h3>Ingredients</h3>
         <!--ingredients list-->
-        <ul id="ingredient-list">
-          <!-- <li>Measurement <span>ingredient</span></li> -->
-        </ul>
-
+        <ul id="ingredient-list"></ul>
         <!--add to cart btn-->
-        <!-- Modal Trigger -->
         <a class="waves-effect waves-light btn modal-trigger" id="modal-btn" href="#ingredient-modal">Add to Cart</a>
       </div>
 
       <!--recipe instructions-->
       <div class="col s12 m6">
-        <div class="recipe-instructions">
-          <h3 class="recipe-instructions"> Instructions</h3>
+        <div>
+          <h3>Instructions</h3>
           <p id="recipe-instructions"></p>
         </div>
       </div>
@@ -82,9 +75,38 @@
   </div>
 
 
+<!-- footer -->
+<footer>
+  <div class="row center-align">
+    <a href="index.html" id="footer-logo"><img src="./assets/images/light-logo.png"></a>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col m2"></div>
+    <div class="col m6">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Popular Recipes</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Favorites</a></li>
+      </ul>
+    </div>
+    <div class="col m4">
+      <p><b>Connect with Us!</b></p>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </div>
+  <hr>
+  <div class="row center-align">
+    <p><a href="https://github.com/codingnav" target="_blank">Made by CodingNav</a></p>
+  </div>
+</footer>
 
-
-  <!-- MODAL HTML (NAVLEEN) -->
+  <!-- MODAL HTML -->
 
   <!-- Modal Structure -->
   <div id="ingredient-modal" class="modal bottom-sheet">
