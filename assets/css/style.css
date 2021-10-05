@@ -18,10 +18,10 @@ nav {
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 1px 0 rgb(0 0 0 / 20%);
 }
 
-nav .brand-logo {
+nav img {
     margin-left: 40px;
-    font-family: var(--heading-font);
-    color: var(--primary-color);
+    width: 200px;
+    vertical-align: middle;
 }
 
 nav ul a {
@@ -57,6 +57,8 @@ nav ul a:hover {
 }
 
 #search-section h1 {
+    text-shadow: 1px 1px #fffaf4;
+    color: #652500;
     font-family: var(--heading-font);
 }
 
@@ -88,6 +90,8 @@ nav ul a:hover {
 
 #popular-section h1 {
     margin-bottom: 50px;
+    text-shadow: 1px 1px #fffaf4;
+    color: #652500;
     font-family: var(--heading-font);
 }
 
