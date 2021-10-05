@@ -1,5 +1,11 @@
 :root {
     --primary-color: #f6412f;
+    --heading-font: 'Francois One', sans-serif;
+    --primary-font: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
 }
 
 /* HOME PAGE */
@@ -13,13 +19,21 @@ nav {
 }
 
 nav .brand-logo {
-    margin-left: 20px;
+    margin-left: 40px;
+    font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
 nav ul a {
+    vertical-align: middle;
+    margin-right: 60px;
     font-size: 28px;
     color: var(--primary-color);
+}
+
+nav ul a:hover {
+    color: #ce3d30;
+    background-color: unset !important;
 }
 
 /* banner images */
@@ -40,6 +54,10 @@ nav ul a {
     position: relative;
     height: 50vh;
     background-color: #f5a9001c;
+}
+
+#search-section h1 {
+    font-family: var(--heading-font);
 }
 
 #home-search {
@@ -70,6 +88,7 @@ nav ul a {
 
 #popular-section h1 {
     margin-bottom: 50px;
+    font-family: var(--heading-font);
 }
 
 #popular-section .card {
@@ -111,6 +130,7 @@ footer .row:last-child a {
 
 footer #footer-logo {
     font-size: 28px;
+    font-family: var(--heading-font);
 }
 
 .fab {
