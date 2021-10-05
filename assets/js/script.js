@@ -396,7 +396,7 @@ function recipeCard(data, length) {
         // document.querySelector(".result-container").append(rowDiv);
         // rowDiv.className = "r" + [x] + " row";
         document.querySelector(".row").append(colDiv);
-        colDiv.className = "column" + [x] + " col s12 m3";
+        colDiv.className = "column" + [x] + " col s12 m4 l2-5";
         document.querySelector(".column" + [x]).appendChild(cardDiv);
         cardDiv.className = "card" + [x] + " card";
 

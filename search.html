@@ -5,56 +5,80 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Stop</title>
-
-  <!-- fontawesome -->
+  <title>Easy Eats</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-  <!-- materializecss -->
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Lato:wght@400;900&display=swap"
+    rel="stylesheet">
+  <!-- materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 
 <body>
-
-  <!-- nav bar -->
-  <nav class="nav-wraper bg-project-green">
-    <a href="index.html" class="brand-logo left ml-6">One Stop</a>
-
-    <ul class="right nav-list center">
-      <li>
-        <form>
-          <div class="input-field">
-            <button class="searchBtn btn transparent" type="submit"><i class="material-icons">search</i></button>
-            <input class="homeSearch resultsSearch" id="search-input" value=" " calss="white grey-tex"
-              placeholder="Enter your favorite recipe here..." type="search" required>
-          </div>
-        </form>
-      </li>
-      <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
-    </ul>
+  <!-- navbar -->
+  <nav>
+      <a href="index.html"><img src="./assets/images/logo.png"></a>
+      <ul class="right">
+        <li>
+          <form action="">
+            <input type="search" required>
+            <i class="fa fa-search"></i>
+          </form>
+          <!-- <form>
+            <div class="input-field">
+              <button class="searchBtn btn transparent" type="submit"><i class="material-icons">search</i></button>
+              <input class="homeSearch" id="search-input" value=" " calss="white grey-tex"
+                placeholder="Enter your favorite recipe here..." type="search" required="">
+            </div>
+          </form> -->
+        </li>
+        <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
+      </ul>
   </nav>
 
-  <!-- search result page main section -->
-  <div class="search-main result-container">
-    <h3 class="heading-font ml-6">Recipe Results...</h3>
-
-    <!-- card -->
-    <div class="row" id="card-row">
-    </div>
-
+  <!-- Search Results -->
+  <div id="search-results" class="container">
+    <h3>Recipe Results...</h3>
+    <!-- cards go here -->
+    <div class="row" id="card-row"></div>
   </div>
 
+  <!-- footer -->
+  <footer>
+    <div class="row center-align">
+      <a href="index.html" id="footer-logo"><img src="./assets/images/light-logo.png"></a>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col m2"></div>
+      <div class="col m6">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Popular Recipes</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="col m4">
+        <p><b>Connect with Us!</b></p>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+    <hr>
+    <div class="row center-align">
+      <p><a href="https://github.com/codingnav" target="_blank">Made by CodingNav</a></p>
+    </div>
+  </footer>
 
   <script src="assets/js/script.js"></script>
-
 </body>
 
 </html>
