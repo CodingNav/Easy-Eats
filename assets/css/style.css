@@ -1,12 +1,17 @@
 :root {
     --primary-color: #f6412f;
-    --heading-color: #652500;
+    --heading-color: #a41515;
+    --font-color: #652500;
     --heading-font: 'Francois One', sans-serif;
     --primary-font: 'Lato', sans-serif;
 }
 
+/* #652500 */
+
 body {
+    line-height: 30px;
     font-family: var(--primary-font);
+    color: var(--font-color);
 }
 
 /* HOME PAGE */
@@ -46,10 +51,9 @@ nav form {
     transition: all 1s;
     width: 50px;
     height: 64px;
-    background: white;
     box-sizing: border-box;
     border-radius: 25px;
-    border: 4px solid white;
+    border: 4px solid transparent;
     padding: 5px;
 }
 
@@ -192,6 +196,7 @@ nav form:valid a {
 /* footer */
 footer {
     max-height: 500px;
+    margin-top: 50px;
     padding-left: 5vw;
     padding-right: 5vw;
     color: white;
@@ -242,17 +247,64 @@ hr {
 
 /* RECIPE PAGE */
 
-#recipe-top {
-    position: relative;
-}
-
-#recipe-name {
+.center {
     position: absolute;
     width: 50%;
     top: 50%;
     transform: translateY(-60%);
+}
+
+#recipe-top {
+    position: relative;
+    height: 87vh;
+    margin: 0;
+    border-bottom: 1px solid rgb(226, 221, 204);
+}
+
+#recipe-name {
     color: var(--heading-color);
     font-family: var(--heading-font);
+}
+
+#recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+#recipe-tags {
+    margin: 8px 0;
+}
+
+#recipe-info {
+    width: 80vw;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #fbeed5;
+}
+
+#recipe-info h3 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+}
+
+#recipe-info hr {
+    width: 55vw;
+    border-width: 3px;
+    border-color: #ceba95;
+}
+
+#ingredient-list {
+    line-height: 40px;
+}
+
+#recipe-info #modal-btn {
+    background-color: var(--primary-color);
+}
+
+#recipe-info #modal-btn:hover {
+    background-color: #bd4237;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -282,5 +334,12 @@ hr {
     }
     #search-results .card {
         height: unset;
+    }
+
+    /* RECIPE PAGE */
+    #recipe-name {
+        position: relative;
+        width: auto;
+        transform: none;
     }
 }

@@ -201,6 +201,7 @@ function loadRecipeByID(Id) {
         .then(function (data) {
             var orderedInstructions = data.meals[0].strInstructions.split(".");
             var recipeName = document.querySelector("#recipe-name");
+            var recipeCategory = document.querySelector("#recipe-category");
             var recipeImg = document.querySelector("#recipe-img");
             var ingredientList = document.querySelector("#ingredient-list");
             var recipeInstructions = document.querySelector("#recipe-instructions");
@@ -208,6 +209,7 @@ function loadRecipeByID(Id) {
             ingredientList.innerHTML = "";
 
             recipeName.innerHTML = data.meals[0].strMeal;
+            recipeCategory.innerHTML = data.meals[0].strCategory;
             recipeImg.src = data.meals[0].strMealThumb;
             // recipeInstructions.innerHTML = data.meals[0].strInstructions;
             tutorialVideo.src = data.meals[0].strYoutube.replace("watch?v=", "embed/");

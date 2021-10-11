@@ -37,20 +37,30 @@
     </ul>
   </nav>
 
-  <!--RECIPE RESULTS-->
+  <!-- recipe results -->
   <div id="recipe-top" class="row">
     <div class="col s12 l6 center-align">
-      <h1 id="recipe-name"></h1>
+      <div class="center">
+        <h1 id="recipe-name"></h1>
+        <h4 id="recipe-category"></h4>
+      </div>
     </div>
-    <div class="col s12 l6" style="padding:0;">
+    <div class="col s12 l6" style="padding:0; height: 100%;">
       <img id="recipe-img" src="" width="100%">
     </div>
   </div>
 
-  <div class="container">
+  <div class="row">
+    <div class="col l12 center-align">
+      <p id="recipe-tags">Tags: breakfast, fruits</p>
+    </div>
+  </div>
+
+  <div id="recipe-info" class="container">
     <div class="row">
       <div class="col s12 m6">
         <h3>Ingredients</h3>
+        <hr>
         <!--ingredients list-->
         <ul id="ingredient-list"></ul>
         <!--add to cart btn-->
@@ -63,92 +73,91 @@
       <div class="col s12 m6">
         <div>
           <h3>Instructions</h3>
+          <hr>
           <p id="recipe-instructions"></p>
         </div>
       </div>
     </div>
 
 
-      <div class="row">
-        <div class="col s12 m12 center-align">
-          <!-- Youtube Tutorial -->
-          <iframe id="tutorial" width="840" height="473" src="" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen style="max-width:100%"></iframe>
-        </div>
+    <div class="row">
+      <div class="col s12 m12 center-align">
+        <!-- Youtube Tutorial -->
+        <iframe id="tutorial" width="840" height="473" src="" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen style="max-width:100%"></iframe>
       </div>
     </div>
+  </div>
 
-
-    <!-- footer -->
-    <footer>
-      <div class="row center-align">
-        <a href="index.html" id="footer-logo"><img src="./assets/images/light-logo.png"></a>
+  <!-- footer -->
+  <footer>
+    <div class="row center-align">
+      <a href="index.html" id="footer-logo"><img src="./assets/images/light-logo.png"></a>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col m2"></div>
+      <div class="col m6">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Popular Recipes</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Favorites</a></li>
+        </ul>
       </div>
-      <hr>
-      <div class="row">
-        <div class="col m2"></div>
-        <div class="col m6">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Popular Recipes</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Favorites</a></li>
-          </ul>
-        </div>
-        <div class="col m4">
-          <p><b>Connect with Us!</b></p>
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-pinterest"></i>
-          <i class="fab fa-youtube"></i>
-        </div>
-      </div>
-      <hr>
-      <div class="row center-align">
-        <p><a href="https://github.com/codingnav" target="_blank">Made by CodingNav</a></p>
-      </div>
-    </footer>
-
-    <!-- MODAL HTML -->
-
-    <!-- Modal Structure -->
-    <div id="ingredient-modal" class="modal bottom-sheet">
-
-      <!-- Ingredients Modal -->
-      <div class="modal-content" id="ingredient-content">
-        <h4>Pick Your Choice of Ingredient
-          <!-- Next Button -->
-          <a class="waves-effect waves-light btn right" id="next-btn">Next</a>
-          <!-- Search Bar for substitute ingredients -->
-          <form class="right" id="substitute-search" style="display:inline-block; width:25%">
-            <div class="input-field">
-              <input id="substitute-input" type="search" placeholder="Enter substitute item" autocomplete="off"
-                required>
-              <label class="label-icon" for="substitute-input"><i class="material-icons">search</i></label>
-            </div>
-          </form>
-        </h4>
-        <h5 class="center-align" id="ingredient-name">Ingredient Name</h5>
-
-        <!-- Modal Cards -->
-        <div class="row" id="ingredient-card"></div>
-      </div>
-
-      <!-- Finalize Modal -->
-      <div class="modal-content" id="done-content">
-        <h4>Finalize your items <a class="waves-effect waves-light btn modal-close right" id="done-btn">Done</a>
-        </h4>
-        <p><i>Click done to add final items to cart.</i></p>
-
-        <!-- Chosen Ingredients Cards -->
-        <div class="row" id="chosen-ingredients"></div>
+      <div class="col m4">
+        <p><b>Connect with Us!</b></p>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-youtube"></i>
       </div>
     </div>
+    <hr>
+    <div class="row center-align">
+      <p><a href="https://github.com/codingnav" target="_blank">Made by CodingNav</a></p>
+    </div>
+  </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/js/script.js"></script>
+  <!-- MODAL HTML -->
+
+  <!-- Modal Structure -->
+  <div id="ingredient-modal" class="modal bottom-sheet">
+
+    <!-- Ingredients Modal -->
+    <div class="modal-content" id="ingredient-content">
+      <h4>Pick Your Choice of Ingredient
+        <!-- Next Button -->
+        <a class="waves-effect waves-light btn right" id="next-btn">Next</a>
+        <!-- Search Bar for substitute ingredients -->
+        <form class="right" id="substitute-search" style="display:inline-block; width:25%">
+          <div class="input-field">
+            <input id="substitute-input" type="search" placeholder="Enter substitute item" autocomplete="off" required>
+            <label class="label-icon" for="substitute-input"><i class="material-icons">search</i></label>
+          </div>
+        </form>
+      </h4>
+      <h5 class="center-align" id="ingredient-name">Ingredient Name</h5>
+
+      <!-- Modal Cards -->
+      <div class="row" id="ingredient-card"></div>
+    </div>
+
+    <!-- Finalize Modal -->
+    <div class="modal-content" id="done-content">
+      <h4>Finalize your items <a class="waves-effect waves-light btn modal-close right" id="done-btn">Done</a>
+      </h4>
+      <p><i>Click done to add final items to cart.</i></p>
+
+      <!-- Chosen Ingredients Cards -->
+      <div class="row" id="chosen-ingredients"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
