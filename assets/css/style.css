@@ -291,7 +291,7 @@ hr {
 
 #recipe-info hr {
     width: 55vw;
-    border-width: 3px;
+    border-width: 2px;
     border-color: #ceba95;
 }
 
@@ -305,6 +305,32 @@ hr {
 
 #recipe-info #modal-btn:hover {
     background-color: #bd4237;
+}
+
+#email-signup hr {
+    width: 100vw;
+    border-color: #ceba95;
+}
+
+#email-signup p {
+    display: inline;
+    margin-right: 20px;
+}
+
+#email-signup input {
+    width: 30vw;
+    border: 1px solid #9e9e9e;
+}
+
+#email-signup input:focus {
+    border: 2px solid #1900ff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#email-signup a {
+    margin-left: 25px;
+    background-color: var(--primary-color);
 }
 
 @media only screen and (min-width: 1200px) {
