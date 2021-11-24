@@ -175,6 +175,10 @@ nav form:valid a {
     line-height: 64px;
 }
 
+#advanced-search {
+    color: var(--font-color);
+}
+
 /* popular section */
 
 #popular-section {

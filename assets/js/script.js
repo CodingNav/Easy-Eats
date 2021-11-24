@@ -1,4 +1,3 @@
-
 // Ingredients API Request
 function searchIngredients(ingredient) {
     // Used a proxy to get rid of CORS error
@@ -133,6 +132,13 @@ if (window.location.pathname.indexOf("/search.html") > -1) {
 };
 
 if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/One-Stop/") {
+    // homepage advanced search modal
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+        console.log("test");
+    });
+
     //home page search
     document.querySelector("#search-btn").addEventListener("click", function (e) {
         e.preventDefault();
