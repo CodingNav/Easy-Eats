@@ -14,6 +14,10 @@ body {
     color: var(--font-color);
 }
 
+.serif {
+    font-family: serif;
+}
+
 /* HOME PAGE */
 
 /* navbar */
@@ -193,10 +197,64 @@ nav form:valid a {
     overflow: hidden;
 }
 
+/* subscription */
+.subscription {
+    background-color: #faeec8;
+}
+
+.subscription p {
+    margin-top: 50px;
+}
+
+.subscription h3 {
+    line-height: 50px;
+}
+
+.subscription input {
+    width: 40% !important;
+    padding-left: 10px !important;
+    border: none !important;
+    background-color: white !important;
+}
+
+.subscription input::placeholder {
+    color: #919191;
+}
+
+.subscription input:focus {
+    border-bottom: 1px solid #333333 !important;
+    box-shadow: none !important;
+}
+
+#input-row {
+    margin-bottom: 0;
+}
+
+#newsletter-btn {
+    height: unset;
+    width: 40% !important;
+    padding: 7px 20px;
+    background-color: #333333;
+}
+
+#privacy-terms {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+#privacy-terms {
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+
+#privacy-terms a {
+    color: var(--font-color);
+    text-decoration: underline;
+}
+
 /* footer */
 footer {
     max-height: 500px;
-    margin-top: 50px;
     padding-left: 5vw;
     padding-right: 5vw;
     color: white;
