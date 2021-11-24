@@ -310,7 +310,7 @@ hr {
 
 #search-results h3 {
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    font-family: var(--heading-font-2);
 }
 
 /* RECIPE PAGE */

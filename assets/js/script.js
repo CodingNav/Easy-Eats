@@ -175,7 +175,7 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
 }
 
 // --------------------------------------------------------------------------------------------
-// -------------------------------[GRABS DATA FROM RECIPES API]--------------------------------
+// ----------------------[GRABS DATA FROM RECIPES API FOR RECIPE PAGE]-------------------------
 
 // Recipe API Request by Id
 function loadRecipeByID(Id) {
@@ -239,6 +239,7 @@ function loadRecipeByID(Id) {
         })
 }
 // --------------------------------------------------------------------------------------------
+// ----------------------------------[RECIPE PAGE MODAL]---------------------------------------
 
 function loadModal(ingredients, recipe) {
     var modalBtn = document.querySelector("#modal-btn");
@@ -340,7 +341,9 @@ function loadModal(ingredients, recipe) {
     });
 }
 
-// Calculates total for cart page
+// ------------------------------------------------------------------------------------------------
+// ------------------------------[TOTAL CALCULATOR FOR CART PAGE]----------------------------------
+
 function totalCalculator() {
     var cartPrices = document.querySelectorAll(".price");
     var valueDisplay = document.querySelector("#value-display");
@@ -368,6 +371,10 @@ function searchRecipe(recipe) {
                 alert("There Are No Recipes Available For This Search Please Try A Different Search");
                 return;
             };
+
+            // finds number of results for search page
+            var numOfResults = document.querySelector("#num-of-results");
+            numOfResults.innerHTML += data.meals.length;
 
             for (i = 0; i < data.meals.length; i++) {
                 var recipeId = data.meals[i].idMeal;
