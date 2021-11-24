@@ -136,7 +136,6 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);
-        console.log("test");
     });
 
     //home page search
