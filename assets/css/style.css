@@ -3,6 +3,7 @@
     --heading-color: #a41515;
     --font-color: #652500;
     --heading-font: 'Francois One', sans-serif;
+    --heading-font-2: 'serif';
     --primary-font: 'Lato', sans-serif;
 }
 
@@ -65,7 +66,8 @@ nav form input {
     position: absolute;
     top: 0;
     right: 40px;
-    width: 100%;;
+    width: 100%;
+    ;
     height: 42.5px;
     line-height: 30px;
     outline: 0;
@@ -113,20 +115,20 @@ nav form:valid .fa {
 }
 
 nav form a {
-  display: none;
-  position: absolute;
-  top: 70px;
-  bottom:0;
-  left: 0;
-  right: 0;
-  font-size: 20px;
-  color: white;
-  text-align: center; 
-  width: 100%;
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 
 nav form:valid a {
-  display: block;
+    display: block;
 }
 
 /* banner images */
@@ -189,11 +191,15 @@ nav form:valid a {
     margin-bottom: 50px;
     text-shadow: 1px 1px #fffaf4;
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    font-family: var(--heading-font-2);
 }
 
 .card {
     height: 450px;
+}
+
+.card .card-content p {
+    letter-spacing: 1px;
 }
 
 #popular-section .card-title {
@@ -323,6 +329,10 @@ hr {
     border-bottom: 1px solid rgb(226, 221, 204);
 }
 
+#recipe-category {
+    letter-spacing: 2px;
+}
+
 #recipe-name {
     color: var(--heading-color);
     font-family: var(--heading-font);
@@ -337,6 +347,8 @@ hr {
 
 #recipe-tags {
     margin: 8px 0;
+    font-size: 16px;
+    font-family: var(--heading-font-2);
 }
 
 #recipe-info {
@@ -347,7 +359,7 @@ hr {
 }
 
 #recipe-info h3 {
-    font-family: var(--heading-font);
+    font-family: var(--heading-font-2);
     color: var(--heading-color);
 }
 
@@ -382,6 +394,9 @@ hr {
 #email-signup p {
     display: inline;
     margin-right: 20px;
+    font-size: 20px;
+    font-family: var(--heading-font-2);
+    letter-spacing: 1px;
 }
 
 #email-signup input {
@@ -401,9 +416,87 @@ hr {
     background-color: var(--primary-color);
 }
 
+/* MODAL */
+
+#recipe-instructions {
+    white-space: pre-line;
+}
+
+#ingredient-name {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: var(--heading-font-2);
+}
+
+/* Modal Card */
+
+.modal.bottom-sheet {
+    max-height: 60%;
+}
+
+#ingredient-content h4, #done-content h4 {
+    font-family: var(--heading-font);
+}
+
+#next-btn, #done-btn {
+    letter-spacing: 1px;
+    font-family: var(--primary-font);
+    background-color: var(--primary-color);
+}
+
+.modal-card {
+    min-height: 550px;
+}
+
+.modal-card .card-content {
+    min-height: 154px;
+}
+
+.checked {
+    border: 3px solid lightgreen;
+}
+
+/* Modal Substitute Item Search Bar */
+.input-field {
+    margin: 0;
+}
+
+#substitute-search {
+    margin: 0px 30px;
+}
+
+#substitute-search input {
+    margin: 0;
+    width: calc(100% - 30px);
+    height: unset;
+    padding-left: 30px;
+}
+
+#substitute-search i {
+    line-height: unset;
+}
+
+#substitute-search .label-icon {
+    left: 0;
+}
+
+/* Cart page collapisible */
+.collapsible-body {
+    background-color: white;
+}
+
 @media only screen and (min-width: 1200px) {
     .row .col.l2-5 {
         width: 20%;
+    }
+
+    /* Modal Card */
+    .modal-card {
+        min-height: 560px;
+    }
+
+    .modal-card .card-content {
+        height: 240px;
     }
 }
 
@@ -415,7 +508,7 @@ hr {
     #popular-section .card {
         height: unset;
     }
-    
+
     #popular-recipes .col:last-child {
         display: none;
     }
@@ -426,6 +519,7 @@ hr {
     #popular-recipes .col:nth-child(n+4) {
         display: none;
     }
+
     #search-results .card {
         height: unset;
     }
