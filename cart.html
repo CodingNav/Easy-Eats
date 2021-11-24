@@ -21,26 +21,35 @@
 </head>
 
 <body>
-  <!-- nav bar -->
-  <nav class="nav-wraper bg-project-green">
-    <a href="index.html" class="brand-logo left ml-6">One Stop</a>
-    </nav>
+  <!-- navbar -->
+  <nav>
+    <a href="index.html"><img src="./assets/images/logo.png"></a>
+    <ul class="right">
+      <li>
+        <form id="search-form" action="">
+          <input id="search-input" type="search" autocomplete="off" required>
+          <i class="fa fa-search search-btn"></i>
+        </form>
+      </li>
+      <li><a href="cart.html" class="fas fa-shopping-cart"></a></li>
+    </ul>
+  </nav>
 
 
-<div class="container">
-  <!--User's Recipes -->
-  <h2 class="header">Your Recipes</h2>
-  <ul class="collapsible" id="chosen-recipes">
-    <!-- <li>
+  <div class="container">
+    <!--User's Recipes -->
+    <h2 class="header">Your Recipes</h2>
+    <ul class="collapsible" id="chosen-recipes">
+      <!-- <li>
       <div class="collapsible-header"><i class="material-icons">dehaze</i></div>
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li> -->
-  </ul>
+    </ul>
 
-  <!--shopping cart-->
-  <h2 class="cart-items">Shopping Cart</h2>
-  <ul class="collection" id="cart-ingredient">
-    <!-- <li class="collection-item">
+    <!--shopping cart-->
+    <h2 class="cart-items">Shopping Cart</h2>
+    <ul class="collection" id="cart-ingredient">
+      <!-- <li class="collection-item">
       <div class="row">
         <div class="col m2">
           <img src="assets/images/pancakes.JPG" width="100" height="100" />
@@ -57,19 +66,19 @@
         </div>
       </div>
     </li> -->
-  </ul>
+    </ul>
 
-  <!--total-->
-  <div class="row">
-    <div class="col">
-      <h4>Estimated Total: $<span id="value-display"></span></h4>
-      <a class="waves-effect waves-light btn">Proceed to Checkout</a>
+    <!--total-->
+    <div class="row">
+      <div class="col">
+        <h4>Estimated Total: $<span id="value-display"></span></h4>
+        <a class="waves-effect waves-light btn">Proceed to Checkout</a>
+      </div>
     </div>
   </div>
-</div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/js/script.js"></script>
 
 </body>
