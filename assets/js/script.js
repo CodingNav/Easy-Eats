@@ -114,19 +114,18 @@ if (window.location.pathname.indexOf("/index.html") > -1) {
     document.querySelector("#search-btn").addEventListener("click", function (e) {
         e.preventDefault();
         var homeSearch = document.querySelector("#search-input").value;
-        localStorage.setItem("homeSearch", homeSearch);
         if (homeSearch !== " ") {
             window.location.href = "search.html";
         };
     });
-  
+
 }
 
 // --------------------------------------------------------------------------------------------
 // -----------------------------------[LOAD RANDOM RECIPES]------------------------------------
 
 if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname.indexOf("/recipe.html") > -1) {
-  // loads random recipe for popular recipes section
+    // loads random recipe for popular recipes section
     var usedRecipes = [];
     function loadRandomRecipe(i) {
         var randomRecipeURL = "https://www.themealdb.com/api/json/v1/1/random.php?cache=" + i;
@@ -342,19 +341,6 @@ function loadModal(ingredients, recipe) {
 }
 
 // ------------------------------------------------------------------------------------------------
-// ------------------------------[TOTAL CALCULATOR FOR CART PAGE]----------------------------------
-
-function totalCalculator() {
-    var cartPrices = document.querySelectorAll(".price");
-    var valueDisplay = document.querySelector("#value-display");
-    var totalValue = 0;
-    for (i = 0; i < cartPrices.length; i++) {
-        totalValue += parseFloat(cartPrices[i].textContent);
-    }
-    valueDisplay.textContent = totalValue.toFixed(2);
-}
-
-// ------------------------------------------------------------------------------------------------
 // ------------------------------------[TO RUN ALL SEARCH BARS]------------------------------------
 
 // Recipes API Request for search page
@@ -470,6 +456,7 @@ if (window.location.pathname.indexOf("/recipe.html") > -1) {
     loadRecipeByID(id);
 }
 // --------------------------------------------------------------------------------------------
+// ---------------------------------[CART PAGE FUNCTIONALITY]----------------------------------
 
 // Runs following code only on the Cart HTML Page
 if (window.location.pathname.indexOf("/cart.html") > -1) {
@@ -503,7 +490,22 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         }
         chosenRecipes.innerHTML += `
             <li>
-                <div class="collapsible-header"><i class="material-icons">dehaze</i> <a href="./recipe.html?id=${recipe.Id}" target="_blank"><img src="${recipe.image}" width="100px"/></a> ${recipe.name}</div>
+                <div class="collapsible-header">
+                    <div class="row" style="margin:0">
+                        <div class="col m1 center-align">
+                            <i class="material-icons">dehaze</i> 
+                        </div>
+                        <div class="col m3 center-align">
+                            <a href="./recipe.html?id=${recipe.Id}" target="_blank"><img src="${recipe.image}" width="100px"/></a> 
+                        </div>
+                        <div class="col m6 center-align">
+                            <p>${recipe.name}</p>
+                        </div>
+                        <div class="col m2 center-align">
+                            <i id="x-btn" class="material-icons" data-index="0">clear</i>
+                        </div>
+                    </div>
+                </div>
                 <div class="collapsible-body">
                     <ul>
                         ${ingredientListHTML}
@@ -538,6 +540,24 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
             </div>
         </li>        
         `
+    }
+
+    // if your recipes section is empty, gives message
+    if (chosenRecipes.innerHTML == "") {
+        var userRecipeMsg = document.querySelector("#user-recipe-msg");
+        userRecipeMsg.innerHTML = `Add ingredients to see your recipes`;
+    }
+
+    // Total calculator for cart page
+    function totalCalculator() {
+        var cartPrices = document.querySelectorAll(".price");
+        var valueDisplay = document.querySelector("#value-display");
+        var totalValue = 0;
+        for (i = 0; i < cartPrices.length; i++) {
+            totalValue += parseFloat(cartPrices[i].textContent);
+        }
+        valueDisplay.textContent = totalValue.toFixed(2);
+   
     }
 
     var quantities = document.querySelectorAll(".quantity");

@@ -491,9 +491,36 @@ hr {
     left: 0;
 }
 
-/* Cart page collapisible */
-.collapsible-body {
+/* CART PAGE */
+
+#cart-section h2 {
+    font-family: var(--heading-font-2);
+}
+
+#chosen-recipes .collapsible-header i {
+    padding-top: 30px;
+}
+
+#chosen-recipes p {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+#chosen-recipes #x-btn {
+    text-align: right;
+}
+
+#cart-section .collapsible-body {
     background-color: white;
+}
+
+#checkout-btn {
+    background-color: var(--primary-color);
+}
+
+#checkout-btn:hover {
+    background-color: #ff695c;
 }
 
 @media only screen and (min-width: 1200px) {
