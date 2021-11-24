@@ -313,6 +313,13 @@ hr {
     font-family: var(--heading-font-2);
 }
 
+#search-results span {
+    padding: 0px 6px;
+    font-family: var(--primary-font);
+    color: white;
+    background-color: var(--font-color);
+}
+
 /* RECIPE PAGE */
 
 .center {
