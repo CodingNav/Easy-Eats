@@ -103,7 +103,7 @@ function finalIngredients(chosenIngredients) {
 }
 
 // --------------------------------------------------------------------------------------------
-if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/One-Stop/") {
+if (window.location.pathname.indexOf("/index.html") > -1) {
     // homepage advanced search modal
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
@@ -119,7 +119,14 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
             window.location.href = "search.html";
         };
     });
-    // loads random recipe for popular recipes section
+  
+}
+
+// --------------------------------------------------------------------------------------------
+// -----------------------------------[LOAD RANDOM RECIPES]------------------------------------
+
+if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname.indexOf("/recipe.html") > -1) {
+  // loads random recipe for popular recipes section
     var usedRecipes = [];
     function loadRandomRecipe(i) {
         var randomRecipeURL = "https://www.themealdb.com/api/json/v1/1/random.php?cache=" + i;
@@ -166,6 +173,7 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
         loadRandomRecipe(i);
     }
 }
+
 // --------------------------------------------------------------------------------------------
 
 // Recipe API Request by Id

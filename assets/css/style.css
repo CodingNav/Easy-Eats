@@ -382,7 +382,7 @@ hr {
 }
 
 #email-signup hr {
-    margin: 50px 0;
+    margin: 50px;
     border-color: #ceba95;
 }
 
@@ -414,6 +414,24 @@ hr {
 #email-signup a {
     margin-left: 25px;
     background-color: var(--primary-color);
+}
+
+/* Recommended Section */
+
+#recommended-section {
+    padding: 0px 150px 30px 150px;
+}
+
+#recommended-section h1 {
+    margin-bottom: 50px;
+    text-shadow: 1px 1px #fffaf4;
+    color: var(--heading-color);
+    font-family: var(--heading-font-2);
+}
+
+#recommended-section .card-title {
+    height: 100px;
+    overflow: hidden;
 }
 
 /* MODAL */
@@ -501,22 +519,22 @@ hr {
 }
 
 @media only screen and (max-width: 1200px) {
-    #popular-section {
+    #popular-section, #recommended-section {
         padding: 30px 50px;
     }
 
-    #popular-section .card {
+    #popular-section .card, #recommended-section .card {
         height: unset;
     }
 
-    #popular-recipes .col:last-child {
+    #popular-recipes .col:last-child, #recommended-recipes .col:last-child {
         display: none;
     }
 
 }
 
 @media only screen and (max-width: 600px) {
-    #popular-recipes .col:nth-child(n+4) {
+    #popular-recipes .col:nth-child(n+4), #recommended-recipes .col:nth-child(n+4) {
         display: none;
     }
 
