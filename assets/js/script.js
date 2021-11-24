@@ -393,7 +393,7 @@ function searchRecipe(recipe) {
                                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart"></i></a>
                                 </div>
                                 <div class="card-content">
-                                    <p class="card-title">${recipeName}</p>
+                                    <span class="card-title">${recipeName}</span>
                                     <p>${recipeCategory}</p>
                                 </div>
                             </a>

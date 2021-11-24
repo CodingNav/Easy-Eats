@@ -181,17 +181,26 @@ nav form:valid a {
     color: var(--font-color);
 }
 
-/* popular section */
+/* Popular, Recommended, and Search Section Cards*/
+
+#recommended-section {
+    padding: 0px 150px 30px 150px;
+}
 
 #popular-section {
     padding: 30px 150px;
 }
 
-#popular-section h1 {
+#popular-section h1, #recommended-section h1, #search-row h1 {
     margin-bottom: 50px;
     text-shadow: 1px 1px #fffaf4;
     color: var(--heading-color);
     font-family: var(--heading-font-2);
+}
+
+#popular-section .card-title, #recommended-section .card-title,  #search-row .card-title {
+    height: 100px;
+    overflow: hidden;
 }
 
 .card {
@@ -200,11 +209,6 @@ nav form:valid a {
 
 .card .card-content p {
     letter-spacing: 1px;
-}
-
-#popular-section .card-title {
-    height: 100px;
-    overflow: hidden;
 }
 
 /* subscription */
@@ -313,7 +317,7 @@ hr {
     font-family: var(--heading-font-2);
 }
 
-#search-results span {
+#search-results #num-of-results {
     padding: 0px 6px;
     font-family: var(--primary-font);
     color: white;
@@ -421,24 +425,6 @@ hr {
 #email-signup a {
     margin-left: 25px;
     background-color: var(--primary-color);
-}
-
-/* Recommended Section */
-
-#recommended-section {
-    padding: 0px 150px 30px 150px;
-}
-
-#recommended-section h1 {
-    margin-bottom: 50px;
-    text-shadow: 1px 1px #fffaf4;
-    color: var(--heading-color);
-    font-family: var(--heading-font-2);
-}
-
-#recommended-section .card-title {
-    height: 100px;
-    overflow: hidden;
 }
 
 /* MODAL */
