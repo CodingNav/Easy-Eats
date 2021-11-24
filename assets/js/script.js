@@ -175,6 +175,7 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
 }
 
 // --------------------------------------------------------------------------------------------
+// -------------------------------[GRABS DATA FROM RECIPES API]--------------------------------
 
 // Recipe API Request by Id
 function loadRecipeByID(Id) {
@@ -189,6 +190,7 @@ function loadRecipeByID(Id) {
             var recipeName = document.querySelector("#recipe-name");
             var recipeCategory = document.querySelector("#recipe-category");
             var recipeImg = document.querySelector("#recipe-img");
+            var recipeTags = document.querySelector("#recipe-tags");
             var ingredientList = document.querySelector("#ingredient-list");
             var recipeInstructions = document.querySelector("#recipe-instructions");
             var tutorialVideo = document.querySelector("#tutorial");
@@ -197,8 +199,14 @@ function loadRecipeByID(Id) {
             recipeName.innerHTML = data.meals[0].strMeal;
             recipeCategory.innerHTML = data.meals[0].strCategory;
             recipeImg.src = data.meals[0].strMealThumb;
-            // recipeInstructions.innerHTML = data.meals[0].strInstructions;
             tutorialVideo.src = data.meals[0].strYoutube.replace("watch?v=", "embed/");
+
+            if (data.meals[0].strTags != null) {
+                recipeTags.innerHTML = "Tags: " + data.meals[0].strTags;
+            }
+            else {
+                recipeTags.innerHTML = '"recipe made with love"';
+            }
 
             for (i = 0; i < orderedInstructions.length; i++) {
                 if (orderedInstructions[i].trim() !== "") {
@@ -207,8 +215,7 @@ function loadRecipeByID(Id) {
             }
             var ingredients = [];
             var measurements = [];
-            // Loops through the strIngredient key and pushes only the ones that aren't null or "" 
-            // into the ingredients array
+            // Loops through the strIngredient key and pushes only the ones that aren't null or "" into the ingredients array
             // Also, loops through the strMeasure key and pushes into the measurements array
             for (i = 1; i < 21; i++) {
                 var ing = data.meals[0]["strIngredient" + i];
