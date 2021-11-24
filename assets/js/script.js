@@ -65,7 +65,7 @@ function searchIngredients(ingredient) {
         })
 }
 
-// Grabs information for each ingredient and adds it to the cards
+// Grabs information for each ingredient and adds it to the final ingredients modal cards
 function finalIngredients(chosenIngredients) {
     var chosenCards = document.querySelector("#chosen-ingredients");
     chosenCards.innerHTML = "";
@@ -101,35 +101,6 @@ function finalIngredients(chosenIngredients) {
         `;
     }
 }
-// Runs searchRecipe function only on the Search HTML Page
-if (window.location.pathname.indexOf("/search.html") > -1) {
-    //search page search
-    window.onload = function searchPage() {
-        var homeSearch = localStorage.getItem("homeSearch");
-        if (homeSearch) {
-            searchRecipe(homeSearch);
-        };
-
-        var count = 0; //uses a button click counter to know how many searches have been made
-        document.querySelector(".searchBtn").addEventListener("click", function (e) {
-            e.preventDefault();
-            count += 1;
-            var previousSearchLength = localStorage.getItem("lengthOfSearch");
-
-            document.querySelector("#card-row").innerHTML = "";
-
-            var recipe = document.querySelector(".resultsSearch").value;
-            var homeSearch = localStorage.getItem("homeSearch");
-
-            if (recipe === "") {
-                recipe = document.querySelector(".resultsSearch").textContent = homeSearch;
-            }
-
-            searchRecipe(recipe);
-
-        });
-    };
-};
 
 if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/One-Stop/") {
     // homepage advanced search modal
@@ -362,81 +333,75 @@ function totalCalculator() {
     valueDisplay.textContent = totalValue.toFixed(2);
 }
 
-// Recipes API Request
+// Recipes API Request for search page
 function searchRecipe(recipe) {
-    //used recipe variable to input recipe search into api url
-    var recipeUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + recipe;
-    fetch(recipeUrl).then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        if (data.meals === null) {
-            searchRecipe(" ");
-            alert("There Are No Recipes Available For This Query Please Try A Different Query");
-            return;
+    var recipeURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + recipe;
+
+    fetch(recipeURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if (data.meals === null) {
+                searchRecipe(" ");
+                alert("There Are No Recipes Available For This Search Please Try A Different Search");
+                return;
+            };
+
+            for (i = 0; i < data.meals.length; i++) {
+                var recipeId = data.meals[i].idMeal;
+                var recipeName = data.meals[i].strMeal;
+                var recipeImg = data.meals[i].strMealThumb;
+                var recipeCategory = data.meals[i].strCategory;
+                var searchRow = document.querySelector("#search-row");
+
+                // adds each recipe card to the row
+                searchRow.innerHTML += `
+                    <div class="col s12 m4 l2-5">
+                        <div class="card">
+                            <a href="./recipe.html?id=${recipeId}">
+                                <div class="card-image">
+                                    <img src="${recipeImg}">
+                                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart"></i></a>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-title">${recipeName}</p>
+                                    <p>${recipeCategory}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    `
+            }
+        })
+}
+
+var searchInput = document.querySelector("#search-input");
+var searchForm = document.querySelector("#search-form");
+
+// checks for search submit event listener 
+if (searchInput) {
+    searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // get search input value
+        var search = searchInput.value;
+        // change window to search page and the search query is added to the url
+        if (search.trim() != "") {
+            window.location.href = "search.html?search=" + search;
         };
-        dataLength = data.meals.length;
-        localStorage.setItem("lengthOfSearch", dataLength);
-        recipeCard(data, data.meals.length);
     });
-};
+}
+
+// Checks if user is on the search page
+if (window.location.pathname.indexOf("/search.html") > -1) {
+    // following checks for the search query and uses it to run the searchRecipe function
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var search = urlParams.get('search');
+    searchRecipe(search);
+}
 
 
-function recipeCard(data, length) {
-    //data from recipe api is passed to this function and used to get the recipe names and recipe descriptions
-
-
-    for (var x = 0; x < length; x++) {
-
-
-        // var rowDiv = document.createElement('div');
-        var colDiv = document.createElement('div');
-        var cardDiv = document.createElement('div');
-        var cardImage = document.createElement('div');
-        var Img = document.createElement('img');
-
-        var a = document.createElement('a');
-        var i = document.createElement('i');
-        var cardContent = document.createElement('div');
-        var span = document.createElement('span');
-        var p = document.createElement('p');
-
-        // document.querySelector(".result-container").append(rowDiv);
-        // rowDiv.className = "r" + [x] + " row";
-        document.querySelector(".row").append(colDiv);
-        colDiv.className = "column" + [x] + " col s12 m4 l2-5";
-        document.querySelector(".column" + [x]).appendChild(cardDiv);
-        cardDiv.className = "card" + [x] + " card";
-
-
-        document.querySelector(".card" + [x]).appendChild(cardImage);
-        cardImage.className = "cardImage" + [x] + " card-image";
-        document.querySelector(".cardImage" + [x]).appendChild(Img);
-        Img.className = "img" + [x];
-        Img.src = data.meals[x].strMealThumb;
-        document.querySelector(".cardImage" + [x]).appendChild(a);
-        a.className = "btn-f" + [x] + " btn-floating halfway-fab waves-effect waves-light red";
-        document.querySelector(".btn-f" + [x]).appendChild(i);
-        i.className = "far" + [x] + " far fa-heart";
-
-
-        document.querySelector(".card" + [x]).appendChild(cardContent);
-        cardContent.className = "cardContent" + [x] + " card-content";
-        document.querySelector(".cardContent" + [x]).appendChild(span);
-        span.className = "cT" + [x] + " card-title";
-        document.querySelector(".cT" + [x]).textContent = data.meals[x].strMeal; //name of meal
-        document.querySelector(".cardContent" + [x]).appendChild(p);
-        p.className = "p" + [x];
-        document.querySelector(".p" + [x]).textContent = data.meals[x].strCategory; //Description of meal
-
-        // Made cards take user to the recipe page
-        var recipeLink = document.createElement('a');
-        cardDiv.appendChild(recipeLink);
-        recipeLink.appendChild(cardImage);
-        recipeLink.appendChild(cardContent);
-        recipeLink.href = "./recipe.html?id=" + data.meals[x].idMeal;
-    };
-
-};
 
 // Runs code for modal only on the Recipe HTML Page
 if (window.location.pathname.indexOf("/recipe.html") > -1) {
@@ -474,7 +439,7 @@ if (window.location.pathname.indexOf("/recipe.html") > -1) {
 
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
-    var id = urlParams.get('id')
+    var id = urlParams.get('id');
     loadRecipeByID(id);
 }
 
@@ -584,9 +549,9 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 
 }
 
-var navSearch = document.querySelector("#search-input");
-var searchForm = document.querySelector("#search-form");
-console.log(searchForm);
+
+var navSearch = document.querySelector("#nav-search-input");
+var searchForm = document.querySelector("#nav-search-form");
 
 if (navSearch) {
     navSearch.addEventListener("click", function (e) {
