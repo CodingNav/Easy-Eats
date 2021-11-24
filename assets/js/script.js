@@ -102,6 +102,7 @@ function finalIngredients(chosenIngredients) {
     }
 }
 
+// --------------------------------------------------------------------------------------------
 if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/One-Stop/") {
     // homepage advanced search modal
     document.addEventListener('DOMContentLoaded', function () {
@@ -165,6 +166,7 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
         loadRandomRecipe(i);
     }
 }
+// --------------------------------------------------------------------------------------------
 
 // Recipe API Request by Id
 function loadRecipeByID(Id) {
@@ -221,6 +223,7 @@ function loadRecipeByID(Id) {
             loadModal(ingredients, recipeObject);
         })
 }
+// --------------------------------------------------------------------------------------------
 
 function loadModal(ingredients, recipe) {
     var modalBtn = document.querySelector("#modal-btn");
@@ -333,6 +336,9 @@ function totalCalculator() {
     valueDisplay.textContent = totalValue.toFixed(2);
 }
 
+// ------------------------------------------------------------------------------------------------
+// ------------------------------------[TO RUN ALL SEARCH BARS]------------------------------------
+
 // Recipes API Request for search page
 function searchRecipe(recipe) {
     var recipeURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + recipe;
@@ -400,8 +406,7 @@ if (window.location.pathname.indexOf("/search.html") > -1) {
     var search = urlParams.get('search');
     searchRecipe(search);
 }
-
-
+// --------------------------------------------------------------------------------------------
 
 // Runs code for modal only on the Recipe HTML Page
 if (window.location.pathname.indexOf("/recipe.html") > -1) {
@@ -412,7 +417,7 @@ if (window.location.pathname.indexOf("/recipe.html") > -1) {
 
     doneContent.style.display = "none";
 
-    //  Initializer for Modal from Materialize
+    //  Initializer for Ingredients Modal from Materialize
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);
@@ -442,6 +447,7 @@ if (window.location.pathname.indexOf("/recipe.html") > -1) {
     var id = urlParams.get('id');
     loadRecipeByID(id);
 }
+// --------------------------------------------------------------------------------------------
 
 // Runs following code only on the Cart HTML Page
 if (window.location.pathname.indexOf("/cart.html") > -1) {
@@ -548,27 +554,4 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
     totalCalculator();
 
 }
-
-
-var navSearch = document.querySelector("#nav-search-input");
-var searchForm = document.querySelector("#nav-search-form");
-
-if (navSearch) {
-    navSearch.addEventListener("click", function (e) {
-        e.preventDefault();
-        var homeSearch = navSearch.value;
-        localStorage.setItem("homeSearch", homeSearch);
-        if (homeSearch.trim() != "") {
-            window.location.href = "search.html";
-        };
-    });
-
-    searchForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var homeSearch = navSearch.value;
-        localStorage.setItem("homeSearch", homeSearch);
-        if (homeSearch.trim() != "") {
-            window.location.href = "search.html";
-        };
-    });
-}
+// --------------------------------------------------------------------------------------------
