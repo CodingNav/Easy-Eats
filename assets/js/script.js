@@ -464,6 +464,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
     var chosenRecipes = document.querySelector("#chosen-recipes");
     var cartIngredients = document.querySelector("#cart-ingredients");
 
+    var ingredientModal = document.querySelector("#ingredient-modal");
     var ingredientContent = document.querySelector("#ingredient-content");
     var ingredientCard = document.querySelector("#ingredient-card");
     var substituteForm = document.querySelector("#substitute-search");
@@ -715,6 +716,19 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
             totalCalculator();
         }
     });
+
+        // For modal card checkboxes 
+        ingredientModal.addEventListener('click', function (event) {
+            // Checks box when clicked
+            if (event.target.textContent == "check_box_outline_blank") {
+                event.target.textContent = "check_box";
+                event.target.parentElement.parentElement.classList.add("checked");
+            }
+            else if (event.target.textContent == "check_box") {
+                event.target.textContent = "check_box_outline_blank";
+                event.target.parentElement.parentElement.classList.remove("checked");
+            }
+        });
 
     totalCalculator();
 
