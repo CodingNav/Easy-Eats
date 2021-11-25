@@ -42,14 +42,60 @@
     <ul class="collection" id="cart-ingredient"></ul>
 
     <!--total-->
-    <div class="row">
-      <div class="col">
-        <h4>Estimated Total: $<span id="value-display"></span></h4>
-        <a id="checkout-btn" class="btn">Proceed to Checkout</a>
+    <div id="checkout-section">
+      <div id="total-section" class="row">
+        <div class="col s6"></div>
+        <div class="col s2">
+          <p>Subtotal:</p>
+          <p>Shipping:</p>
+          <hr>
+          <p>Total:</p>
+        </div>
+        <div class="align-section col s4">
+          <p>$<span id="value-display"></span></p>
+          <p>Calculated at checkout</p>
+          <hr>
+          <p>$<span id="total-display"></span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 align-section">
+          <a id="checkout-btn" class="btn">Proceed to Checkout</a>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- footer -->
+  <footer>
+    <div class="row center-align">
+      <a href="index.html" id="footer-logo"><img src="./assets/images/light-logo.png"></a>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col m2"></div>
+      <div class="col m6">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Popular Recipes</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="col m4">
+        <p><b>Connect with Us!</b></p>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+    <hr>
+    <div class="row center-align">
+      <p><a href="https://github.com/codingnav" target="_blank">© 2021 CodingNav. All rights reserved</a></p>
+    </div>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/js/script.js"></script>

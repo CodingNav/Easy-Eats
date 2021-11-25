@@ -552,11 +552,13 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
     function totalCalculator() {
         var cartPrices = document.querySelectorAll(".price");
         var valueDisplay = document.querySelector("#value-display");
+        var totalDisplay = document.querySelector("#total-display");
         var totalValue = 0;
         for (i = 0; i < cartPrices.length; i++) {
             totalValue += parseFloat(cartPrices[i].textContent);
         }
         valueDisplay.textContent = totalValue.toFixed(2);
+        totalDisplay.textContent = totalValue.toFixed(2);
    
     }
 
