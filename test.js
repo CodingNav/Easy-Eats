@@ -1,8 +1,8 @@
-var addIngredientsBtn = document.querySelector("#add-ingred");
 var ingredientContent = document.querySelector("#ingredient-content");
+var ingredientCard = document.querySelector("#ingredient-card");
 var substituteForm = document.querySelector("#substitute-search");
 var userSubstitute = document.querySelector("#substitute-input");
-var ingredientCard = document.querySelector("#ingredient-card");
+var addIngredientsBtn = document.querySelector("#add-ingred");
 
 // Ingredients API Request
 function searchIngredients(ingredient) {
@@ -84,7 +84,7 @@ addIngredientsBtn.addEventListener('click', function () {
     userSubstitute.value = "";
     ingredientCard.innerHTML = ``;
     document.querySelector("#ingredient-name").textContent = 'Search for the Ingredient'
-    
+
     addIngredientsModal();
 });
 

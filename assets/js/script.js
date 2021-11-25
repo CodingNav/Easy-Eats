@@ -463,7 +463,18 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 
     var chosenRecipes = document.querySelector("#chosen-recipes");
     var cartIngredients = document.querySelector("#cart-ingredients");
-    var addIngredientBtn = document.querySelector("#add-ingred");
+
+    var ingredientContent = document.querySelector("#ingredient-content");
+    var ingredientCard = document.querySelector("#ingredient-card");
+    var substituteForm = document.querySelector("#substitute-search");
+    var userSubstitute = document.querySelector("#substitute-input");
+    var addIngredientsBtn = document.querySelector("#add-ingred");
+
+    //  Initializer for Ingredients Modal from Materialize
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
 
     // Collapisble Initializer
     document.addEventListener('DOMContentLoaded', function () {
@@ -471,10 +482,101 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         var instances = M.Collapsible.init(elems);
     });
 
-    var cart = {
-        recipes: [],
-        ingredients: []
-    };
+    addIngredientsBtn.addEventListener('click', function () {
+        ingredientsChosen = [];
+
+        ingredientContent.style.display = "block";
+        userSubstitute.value = "";
+        ingredientCard.innerHTML = ``;
+        document.querySelector("#ingredient-name").textContent = 'Search for the Ingredient'
+
+        addIngredientsModal();
+    });
+
+    substituteForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        searchIngredients(userSubstitute.value);
+    });
+
+
+    function addIngredientsModal() {
+        var addBtn = document.querySelector("#add-btn");
+
+        var cart = {
+            recipes: [],
+            ingredients: []
+        };
+
+        // Checks if there was data saved in local storage already
+        // This helps add info to local storage, rather than replace
+        if (localStorage.getItem('cart') != null) {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+
+        // Click event listener for add to cart button
+        addBtn.addEventListener('click', function () {
+            var cardArray = document.querySelectorAll("#ingredient-card .checked");
+
+            // Loops through cards checked by user
+            for (i = 0; i < cardArray.length; i++) {
+                var card = cardArray[i];
+                // Adds each cards info to this object
+                var ingredientInfo = {
+                    link: card.querySelector("a").href,
+                    image: card.querySelector("img").src,
+                    brand: card.querySelector(".brand").textContent,
+                    name: card.querySelector(".name").textContent,
+                    price: card.querySelector(".price").textContent,
+                    quantity: 1
+                }
+                // Checks if new ingredient added already exists
+                var ingredientExists = cart.ingredients.find(function (savedIngredient) {
+                    return savedIngredient.link == ingredientInfo.link;
+                });
+                if (ingredientExists) {
+                    ingredientExists.quantity++;
+                }
+                else {
+                    // Pushes cards info into array
+                    cart.ingredients.push(ingredientInfo);
+                }
+            }
+            // Saved information to localStorage under name cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            userSubstitute.value = "";
+            ingredientCard.innerHTML = ``;
+            document.querySelector("#ingredient-name").textContent = 'Search for the Ingredient';
+
+            cartIngredients.innerHTML = '';
+            // Adds each ingredient from array to cart page
+            for (i = 0; i < cart.ingredients.length; i++) {
+                cartIngredients.innerHTML += `
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col m2">
+                                <a href="${cart.ingredients[i].link}" target="_blank">
+                                    <img src="${cart.ingredients[i].image}" width="100" height="100"/>
+                                </a>
+                            </div>
+                            <div class="col m5">
+                                <p>${cart.ingredients[i].name}</p>
+                            </div>
+                            <div class="col m1 center-align">
+                                <input class="quantity center-align" data-index="${i}" type="number" value="${cart.ingredients[i].quantity}" min="1">
+                            </div>
+                            <div class="col m2 center-align">
+                                <p>$<span class="price">${(cart.ingredients[i].price * cart.ingredients[i].quantity).toFixed(2)}</span></p>
+                            </div>
+                            <div class="col m2 center-align">
+                                <i class="material-icons" data-index="${i}">clear</i>
+                            </div>
+                        </div>
+                    </li>        
+                    `
+            }
+        });
+    }
 
     // Checks if there was data saved in local storage already
     // This helps add info to local storage, rather than replace
