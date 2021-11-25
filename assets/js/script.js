@@ -462,7 +462,8 @@ if (window.location.pathname.indexOf("/recipe.html") > -1) {
 if (window.location.pathname.indexOf("/cart.html") > -1) {
 
     var chosenRecipes = document.querySelector("#chosen-recipes");
-    var cartIngredient = document.querySelector("#cart-ingredient");
+    var cartIngredients = document.querySelector("#cart-ingredients");
+    var addIngredientBtn = document.querySelector("#add-ingred");
 
     // Collapisble Initializer
     document.addEventListener('DOMContentLoaded', function () {
@@ -517,7 +518,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 
     // Adds each ingredient from array to cart page
     for (i = 0; i < cart.ingredients.length; i++) {
-        cartIngredient.innerHTML += `
+        cartIngredients.innerHTML += `
         <li class="collection-item">
             <div class="row">
                 <div class="col m2">
@@ -548,6 +549,12 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         userRecipeMsg.innerHTML = `Add ingredients to see your recipes`;
     }
 
+    // if your shopping cart is empty, gives message
+    if (cartIngredients.innerHTML == "") {
+        var emptyCartMsg = document.querySelector("#empty-cart-msg");
+        emptyCartMsg.innerHTML = `Shopping cart is empty`;
+    }
+
     // Total calculator for cart page
     function totalCalculator() {
         var cartPrices = document.querySelectorAll(".price");
@@ -559,7 +566,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         }
         valueDisplay.textContent = totalValue.toFixed(2);
         totalDisplay.textContent = totalValue.toFixed(2);
-   
+
     }
 
     var quantities = document.querySelectorAll(".quantity");
@@ -577,11 +584,23 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
 
             // Changes estimated total when quantity is changed
             totalCalculator();
-        })
+        });
     }
 
+    // When x is clicked, the recipe is removed from the array 
+    chosenRecipes.addEventListener('click', function (event) {
+        if (event.target.textContent == "clear") {
+            var ingIndex = event.target.getAttribute("data-index");
+            cart.recipes.splice(ingIndex, 1);
+            event.target.parentElement.parentElement.parentElement.remove();
+
+            // Resaves information when item is deleted
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    });
+
     // When x is clicked, the ingredient is removed from the array 
-    cartIngredient.addEventListener('click', function (event) {
+    cartIngredients.addEventListener('click', function (event) {
         if (event.target.textContent == "clear") {
             var ingIndex = event.target.getAttribute("data-index");
             cart.ingredients.splice(ingIndex, 1);
@@ -593,7 +612,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
             // Changes estimated total when item is deleted
             totalCalculator();
         }
-    })
+    });
 
     totalCalculator();
 

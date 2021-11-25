@@ -494,6 +494,9 @@ hr {
 /* CART PAGE */
 
 #cart-section h2 {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
     font-family: var(--heading-font-2);
 }
 
@@ -509,6 +512,18 @@ hr {
 
 #chosen-recipes #x-btn {
     text-align: right;
+}
+
+#add-ingred {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    font-family: var(--primary-font);
+    background-color: var(--primary-color);
+}
+
+#add-ingred:hover {
+    background-color: #ff695c;
 }
 
 #cart-section .collapsible-body {
@@ -533,11 +548,24 @@ hr {
     display: inline;
     padding: 15px 20px;
     font-size: 18px;
-    background-color: var(--primary-color);
+    background-color: #333333;
 }
 
 #checkout-btn:hover {
-    background-color: #ff695c;
+    background-color: #505050;
+}
+
+.cart-modal .btn {
+    margin: 0px 5px;
+    font-family: var(--primary-font);
+}
+
+#add-btn {
+    background-color: var(--primary-color);
+}
+
+#close-btn {
+    background-color: var(--font-color);
 }
 
 @media only screen and (min-width: 1200px) {

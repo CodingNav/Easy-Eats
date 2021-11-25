@@ -33,13 +33,14 @@
 
   <div id="cart-section" class="container">
     <!--User's Recipes -->
-    <h2 class="header">Your Recipes</h2>
+    <h2>Your Recipes</h2>
     <ul class="collapsible" id="chosen-recipes"></ul>
     <p id="user-recipe-msg"></p>
 
     <!--shopping cart-->
-    <h2 class="cart-items">Shopping Cart</h2>
-    <ul class="collection" id="cart-ingredient"></ul>
+    <h2>Shopping Cart<a id="add-ingred" class="btn modal-trigger" href="#ingredient-modal">Add More Ingredients</a></h2>
+    <ul class="collection" id="cart-ingredients"></ul>
+    <p id="empty-cart-msg"></p>
 
     <!--total-->
     <div id="checkout-section">
@@ -97,8 +98,35 @@
     </div>
   </footer>
 
+  <!-- MODAL HTML -->
+
+  <!-- Modal Structure -->
+  <div id="ingredient-modal" class="cart-modal modal bottom-sheet">
+    <!-- Ingredients Modal -->
+    <div class="modal-content" id="ingredient-content">
+      <h4>Pick Your Choice of Ingredient
+        <!-- Close Button -->
+        <a class="modal-close waves-effect waves-light btn right" id="close-btn">Close</a>
+        <!-- Add Button -->
+        <a class="waves-effect waves-light btn right" id="add-btn">Add</a>
+        <!-- Search Bar for substitute ingredients -->
+        <form class="right" id="substitute-search" style="display:inline-block; width:25%">
+          <div class="input-field">
+            <input id="substitute-input" type="search" placeholder="Enter substitute item" autocomplete="off" required>
+            <label class="label-icon" for="substitute-input"><i class="material-icons">search</i></label>
+          </div>
+        </form>
+      </h4>
+      <h5 class="center-align" id="ingredient-name">Search for the Ingredient</h5>
+
+      <!-- Modal Cards -->
+      <div class="row" id="ingredient-card"></div>
+    </div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="test.js"></script>
 
 </body>
 
