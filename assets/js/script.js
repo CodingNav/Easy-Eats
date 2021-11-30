@@ -564,13 +564,13 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
                                 <p>${cart.ingredients[i].name}</p>
                             </div>
                             <div class="col m1 center-align">
-                                <input class="quantity center-align" data-index="${i}" type="number" value="${cart.ingredients[i].quantity}" min="1">
+                                <input class="quantity center-align" data-index="${cart.ingredients[i].link}" type="number" value="${cart.ingredients[i].quantity}" min="1">
                             </div>
                             <div class="col m2 center-align">
                                 <p>$<span class="price">${(cart.ingredients[i].price * cart.ingredients[i].quantity).toFixed(2)}</span></p>
                             </div>
                             <div class="col m2 center-align">
-                                <i class="material-icons" data-index="${i}">clear</i>
+                                <i class="clear material-icons" data-index="${cart.ingredients[i].link}">clear</i>
                             </div>
                         </div>
                     </li>        
@@ -606,7 +606,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
                             <p>${recipe.name}</p>
                         </div>
                         <div class="col m2 center-align">
-                            <i id="x-btn" class="material-icons" data-index="0">clear</i>
+                            <i id="x-btn" class="clear material-icons" data-index="0">clear</i>
                         </div>
                     </div>
                 </div>
@@ -633,13 +633,13 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
                     <p>${cart.ingredients[i].name}</p>
                 </div>
                 <div class="col m1 center-align">
-                    <input class="quantity center-align" data-index="${i}" type="number" value="${cart.ingredients[i].quantity}" min="1">
+                    <input class="quantity center-align" data-index="${cart.ingredients[i].link}" type="number" value="${cart.ingredients[i].quantity}" min="1">
                 </div>
                 <div class="col m2 center-align">
                     <p>$<span class="price">${(cart.ingredients[i].price * cart.ingredients[i].quantity).toFixed(2)}</span></p>
                 </div>
                 <div class="col m2 center-align">
-                    <i class="material-icons" data-index="${i}">clear</i>
+                    <i class="clear material-icons" data-index="${cart.ingredients[i].link}">clear</i>
                 </div>
             </div>
         </li>        
@@ -703,6 +703,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
     });
 
     // When x is clicked, the ingredient is removed from the array 
+
     cartIngredients.addEventListener('click', function (event) {
         if (event.target.textContent == "clear") {
             var ingIndex = event.target.getAttribute("data-index");
@@ -717,18 +718,18 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         }
     });
 
-        // For modal card checkboxes 
-        ingredientModal.addEventListener('click', function (event) {
-            // Checks box when clicked
-            if (event.target.textContent == "check_box_outline_blank") {
-                event.target.textContent = "check_box";
-                event.target.parentElement.parentElement.classList.add("checked");
-            }
-            else if (event.target.textContent == "check_box") {
-                event.target.textContent = "check_box_outline_blank";
-                event.target.parentElement.parentElement.classList.remove("checked");
-            }
-        });
+    // For modal card checkboxes 
+    ingredientModal.addEventListener('click', function (event) {
+        // Checks box when clicked
+        if (event.target.textContent == "check_box_outline_blank") {
+            event.target.textContent = "check_box";
+            event.target.parentElement.parentElement.classList.add("checked");
+        }
+        else if (event.target.textContent == "check_box") {
+            event.target.textContent = "check_box_outline_blank";
+            event.target.parentElement.parentElement.classList.remove("checked");
+        }
+    });
 
     totalCalculator();
 
