@@ -695,7 +695,7 @@ if (window.location.pathname.indexOf("/cart.html") > -1) {
         if (event.target.textContent == "clear") {
             var ingIndex = event.target.getAttribute("data-index");
             cart.recipes.splice(ingIndex, 1);
-            event.target.parentElement.parentElement.parentElement.remove();
+            event.target.parentElement.parentElement.parentElement.parentElement.remove();
 
             // Resaves information when item is deleted
             localStorage.setItem('cart', JSON.stringify(cart));
