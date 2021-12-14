@@ -124,7 +124,7 @@ if (window.location.pathname.indexOf("/index.html") > -1 || window.location.path
 // --------------------------------------------------------------------------------------------
 // -----------------------------------[LOAD RANDOM RECIPES]------------------------------------
 
-if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname.indexOf("/recipe.html") > -1) {
+if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname.indexOf("/recipe.html") > -1 || window.location.pathname == "/Easy-Eats/") {
     // loads random recipe for popular recipes section
     var usedRecipes = [];
     function loadRandomRecipe(i) {
