@@ -103,7 +103,7 @@ function finalIngredients(chosenIngredients) {
 }
 
 // --------------------------------------------------------------------------------------------
-if (window.location.pathname.indexOf("/index.html") > -1) {
+if (window.location.pathname.indexOf("/index.html") > -1 || window.location.pathname == "/Easy-Eats/") {
     // homepage advanced search modal
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.modal');
